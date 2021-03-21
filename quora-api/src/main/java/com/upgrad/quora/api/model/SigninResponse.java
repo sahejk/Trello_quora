@@ -1,4 +1,4 @@
-package java.com.upgrad.quora.api.model;
+package com.upgrad.quora.api.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;

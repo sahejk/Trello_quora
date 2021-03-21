@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.com.upgrad.quora.api.model.SigninResponse;
-import java.com.upgrad.quora.api.model.SignoutResponse;
+import com.upgrad.quora.api.model.SigninResponse;
+import com.upgrad.quora.api.model.SignoutResponse;
 import java.util.Base64;
 
 //RestController annotation specifies that this class represents a REST API(equivalent of @Controller + @ResponseBody)
