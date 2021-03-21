@@ -61,7 +61,7 @@ public class UserController {
      * @return Signin resopnse which has userId and access-token in response header.
      * @throws AuthenticationFailedException : if username or password is invalid
      */
-    @RequestMapping(method = RequestMethod.POST, path = "/user/signin", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(method = RequestMethod.POST, path = "/signin", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<SigninResponse> userSignin(@RequestHeader("authorization") final String authorization) throws AuthenticationFailedException {
 
         // The encoded Base64 format string has to be decoded to a separate string of username and password
@@ -90,7 +90,7 @@ public class UserController {
      * @throws SignOutRestrictedException
      */
 
-    @RequestMapping(method = RequestMethod.POST, path = "/user/signout", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(method = RequestMethod.POST, path = "/signout", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 
     public ResponseEntity<SignoutResponse> signout(
             @RequestHeader("authorization") final String acessToken) throws SignOutRestrictedException {
