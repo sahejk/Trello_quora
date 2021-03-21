@@ -46,11 +46,11 @@
         "parameters": [
           {
             "in": "body",
-            "name": "SignupUserRequest",
+            "name": "SignUpUserRequest",
             "description": "Request containing user signup information",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/SignupUserRequest"
+              "$ref": "#/definitions/SignUpUserRequest"
             }
           }
         ],
@@ -294,7 +294,7 @@
     }
   },
   "definitions": {
-    "SignupUserRequest": {
+    "SignUpUserRequest": {
       "type": "object",
       "properties": {
         "first_name": {

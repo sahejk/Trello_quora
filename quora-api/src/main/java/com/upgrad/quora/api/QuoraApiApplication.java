@@ -4,7 +4,6 @@ import com.upgrad.quora.service.ServiceConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Import;
 
 /**
@@ -13,7 +12,7 @@ import org.springframework.context.annotation.Import;
  */
 @SpringBootApplication
 @Import(ServiceConfiguration.class)
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+@EnableAutoConfiguration
 public class QuoraApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(QuoraApiApplication.class, args);
