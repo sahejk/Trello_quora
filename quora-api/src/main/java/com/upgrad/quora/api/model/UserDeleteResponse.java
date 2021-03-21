@@ -8,27 +8,28 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 /**
- * SigninResponse
+ * UserDeleteResponse
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen")
-public class SigninResponse   {
+
+public class UserDeleteResponse   {
     @JsonProperty("id")
     private String id = null;
 
-    @JsonProperty("message")
-    private String message = null;
+    @JsonProperty("status")
+    private String status = null;
 
-    public SigninResponse id(String id) {
+    public UserDeleteResponse id(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * uuid for the user authentication after he signs in.
+     * uuid of the deleted user
      * @return id
      **/
-    @ApiModelProperty(required = true, value = "uuid for the user authentication after he signs in.")
+    @ApiModelProperty(required = true, value = "uuid of the deleted user")
     @NotNull
 
 
@@ -40,25 +41,25 @@ public class SigninResponse   {
         this.id = id;
     }
 
-    public SigninResponse message(String message) {
-        this.message = message;
+    public UserDeleteResponse status(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * message to show the status of the signed in user
-     * @return message
+     * message showing status of the deleted user
+     * @return status
      **/
-    @ApiModelProperty(required = true, value = "message to show the status of the signed in user")
+    @ApiModelProperty(required = true, value = "message showing status of the deleted user")
     @NotNull
 
 
-    public String getMessage() {
-        return message;
+    public String getStatus() {
+        return status;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 
@@ -70,23 +71,23 @@ public class SigninResponse   {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        SigninResponse signinResponse = (SigninResponse) o;
-        return Objects.equals(this.id, signinResponse.id) &&
-                Objects.equals(this.message, signinResponse.message);
+        UserDeleteResponse userDeleteResponse = (UserDeleteResponse) o;
+        return Objects.equals(this.id, userDeleteResponse.id) &&
+                Objects.equals(this.status, userDeleteResponse.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, message);
+        return Objects.hash(id, status);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SigninResponse {\n");
+        sb.append("class UserDeleteResponse {\n");
 
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

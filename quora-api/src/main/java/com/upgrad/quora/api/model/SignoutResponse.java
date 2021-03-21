@@ -11,7 +11,7 @@ import java.util.Objects;
  * SignoutResponse
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2021-02-11T20:36:27.892+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen")
 
 public class SignoutResponse   {
     @JsonProperty("id")
