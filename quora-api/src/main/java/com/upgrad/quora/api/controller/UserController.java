@@ -1,15 +1,15 @@
 package com.upgrad.quora.api.controller;
 
+import com.upgrad.quora.api.model.SignUpUserRequest;
+import com.upgrad.quora.api.model.SigninResponse;
+import com.upgrad.quora.api.model.SignoutResponse;
+import com.upgrad.quora.api.model.SignupUserResponse;
 import com.upgrad.quora.service.business.UserAuthenticationBusinessService;
 import com.upgrad.quora.service.entity.UserAuthTokenEntity;
 import com.upgrad.quora.service.entity.UserEntity;
 import com.upgrad.quora.service.exception.AuthenticationFailedException;
 import com.upgrad.quora.service.exception.SignOutRestrictedException;
 import com.upgrad.quora.service.exception.SignUpRestrictedException;
-import main.api.model.SignUpUserRequest;
-import main.api.model.SigninResponse;
-import main.api.model.SignoutResponse;
-import main.api.model.SignupUserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
