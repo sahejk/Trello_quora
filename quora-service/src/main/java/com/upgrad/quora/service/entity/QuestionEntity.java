@@ -13,7 +13,13 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity
 @Table(name = "question", schema = "public")
 @NamedQueries({
-    @NamedQuery(name = "getAllQuestions", query = "select q from QuestionEntity q")
+    @NamedQuery(name = "getAllQuestions", query = "select q from QuestionEntity q"),
+    @NamedQuery(
+        name = "getQuestionById",
+        query = "select q from QuestionEntity q where q.uuid=:uuid"),
+    @NamedQuery(
+        name = "getQuestionByUser",
+        query = "select q from QuestionEntity q where q.userEntity=:user")
 })
 public class QuestionEntity implements Serializable {
 
