@@ -1,27 +1,19 @@
 package com.upgrad.quora.api.controller;
 
-import com.upgrad.quora.api.model.QuestionDeleteResponse;
-import com.upgrad.quora.api.model.QuestionDetailsResponse;
-import com.upgrad.quora.api.model.QuestionEditRequest;
-import com.upgrad.quora.api.model.QuestionEditResponse;
-import com.upgrad.quora.api.model.QuestionRequest;
-import com.upgrad.quora.api.model.QuestionResponse;
+import com.upgrad.quora.api.model.*;
 import com.upgrad.quora.service.business.QuestionService;
 import com.upgrad.quora.service.entity.QuestionEntity;
 import com.upgrad.quora.service.exception.AuthorizationFailedException;
 import com.upgrad.quora.service.exception.InvalidQuestionException;
 import com.upgrad.quora.service.exception.UserNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/question")
@@ -96,13 +88,10 @@ public class QuestionController {
    * @throws AuthorizationFailedException  when the user is invalid or signedout
    * @throws InvalidQuestionException if question with questionId doesn't exist.
    */
-  @RequestMapping(
-      method = RequestMethod.PUT,
-      path = "/question/edit/{questionId}",
-      produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @PutMapping(path = "/edit/{questionId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
   public ResponseEntity<QuestionEditResponse> editQuestion(
       @RequestHeader("authorization") final String accessToken,
-      @PathVariable("questionId") final String questionId,
+      @PathVariable final String questionId,
       QuestionEditRequest questionEditRequest)
       throws AuthorizationFailedException, InvalidQuestionException {
     QuestionEntity questionEntity =
@@ -122,7 +111,7 @@ public class QuestionController {
    * @throws AuthorizationFailedException when the user is invalid or signedout
    * @throws InvalidQuestionException if question with questionId doesn't exist.
    */
-  @RequestMapping(method = RequestMethod.DELETE, path = "/question/delete/{questionId}")
+  @RequestMapping(method = RequestMethod.DELETE, path = "/delete/{questionId}")
   public ResponseEntity<QuestionDeleteResponse> deleteQuestion(
       @RequestHeader("authorization") final String accessToken,
       @PathVariable("questionId") final String questionId)
@@ -145,7 +134,7 @@ public class QuestionController {
    */
   @RequestMapping(
       method = RequestMethod.GET,
-      path = "question/all/{userId}",
+      path = "/all/{userId}",
       produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
   public ResponseEntity<List<QuestionDetailsResponse>> getQuestionByUserId(
       @RequestHeader("authorization") final String accessToken,
